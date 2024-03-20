@@ -50,7 +50,12 @@ public class Main {
 
         System.out.println(school.retrieveAllCoursesForStudent("c001"));
 
+        Pharmacy pharmacy = new Pharmacy();
 
-        // use Sack
+        pharmacy.save(new Medication("ASS",2.34,40));
+        pharmacy.save(new Medication("Paracetamol",2.83,30));
+        pharmacy.save(new Medication("Bepanthen",8.13,25));
+
+        System.out.println(pharmacy);
     }
 }
