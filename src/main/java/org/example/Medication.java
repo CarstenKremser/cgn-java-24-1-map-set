@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Medication {
     private String name;
     private double price;
@@ -30,5 +32,18 @@ public class Medication {
                 ", price=" + price +
                 ", availability=" + availability +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Medication that = (Medication) object;
+        return Double.compare(price, that.price) == 0 && Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price);
     }
 }
